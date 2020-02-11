@@ -6,42 +6,13 @@ body {
 .container {
 	max-width: 400px;
 }
-
-.card {
-	border-radius: 50px;
-
-	.icon {
-		border-radius: 50%;
-		background-color: red;
-	}
-	img {
-		border-radius: 50px;
-	}
-}
-
-.day {
-	background: #076585; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#fff,
-		#076585
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#fff,
-		#076585
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 .night {
-	background: #141e30; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#243b55,
-		#141e30
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#243b55,
-		#141e30
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: url('/dist/img/night.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.day {
+	background: url('/dist/img/day.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }

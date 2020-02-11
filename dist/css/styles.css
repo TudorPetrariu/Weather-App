@@ -7,33 +7,14 @@ body {
   max-width: 400px;
 }
 
-.card {
-  border-radius: 50px;
-}
-
-.card .icon {
-  border-radius: 50%;
-  background-color: red;
-}
-
-.card img {
-  border-radius: 50px;
+.night {
+  background: url("/dist/img/night.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .day {
-  background: #076585;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#fff), to(#076585));
-  background: linear-gradient(to right, #fff, #076585);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.night {
-  background: #141e30;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#243b55), to(#141e30));
-  background: linear-gradient(to right, #243b55, #141e30);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: url("/dist/img/day.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

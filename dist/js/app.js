@@ -1,10 +1,32 @@
 const cityForm = document.querySelector('form')
-const card = document.querySelector('.card')
+const caard = document.querySelector('.caard')
 const details = document.querySelector('.details')
 let time = document.querySelector('.time')
 const icon = document.querySelector('.icon img')
 const body = document.querySelector('body')
-console.log(icon);
+
+
+// const getTodos = async () => {
+//     const response = await fetch(`https://jsonplaceholder.typicode.com/todos/`)
+//     const data = await response.json();
+//     return data.slice(0, 10);
+// }
+// getTodos()
+//     .then(data => console.log('resolved', data))
+//     .catch(err => console.log(err))
+
+
+//     .then((response) => {
+//         return response.json();
+//     })
+//     .then((data) => {
+//         console.log(data)
+//     })
+//     .catch((err) => {
+//         console.log(err)
+
+//     })
+
 
 const updateUI = (data) => {
     // const cityDets = data.cityDetails;
@@ -25,22 +47,23 @@ const updateUI = (data) => {
     const iconSrc = `img/icons/${ weather.WeatherIcon }.svg`;
     icon.setAttribute('src', iconSrc);
 
-    let timeSrc = null
+    // let timeSrc = null
     if (weather.IsDayTime) {
+        // timeSrc = 'img/day.svg'
         body.classList.add('day')
-        timeSrc = 'img/day.svg'
+
     } else {
-        timeSrc = 'img/night.svg'
+        // timeSrc = 'img/night.svg'
         body.classList.add('night')
 
     }
-    time.setAttribute('src', timeSrc);
+    // time.setAttribute('src', timeSrc);
 
 
 
     ///remove d-none class if existst
-    card.classList.contains('d-none') ?
-        card.classList.remove('d-none') :
+    caard.classList.contains('d-none') ?
+        caard.classList.remove('d-none') :
         null
 
 }
@@ -64,6 +87,13 @@ cityForm.addEventListener('submit', e => {
     updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err))
+    localStorage.setItem('city', city)
 
     // update the Ui with the new city
 })
+
+if (localStorage.getItem('city')) {
+    updateCity(localStorage.getItem('city'))
+        .then(data => updateUI(data))
+        .catch(err => console.log(err))
+}
